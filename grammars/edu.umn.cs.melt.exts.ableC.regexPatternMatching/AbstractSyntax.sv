@@ -2,7 +2,7 @@ grammar edu:umn:cs:melt:exts:ableC:regexPatternMatching;
 
 import edu:umn:cs:melt:exts:ableC:algebraicDataTypes:patternmatching:abstractsyntax;
 import edu:umn:cs:melt:exts:ableC:regex;
-import edu:umn:cs:melt:ableC:abstractsyntax;
+import edu:umn:cs:melt:ableC:abstractsyntax:host;
 import edu:umn:cs:melt:ableC:abstractsyntax:env;
 import silver:langutil;
 import silver:langutil:pp;
