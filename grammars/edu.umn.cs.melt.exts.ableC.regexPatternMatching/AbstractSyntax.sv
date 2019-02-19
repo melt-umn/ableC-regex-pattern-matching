@@ -13,7 +13,8 @@ top::Pattern ::= re::String
   -- ToDo - better pattern would be   ' v @ when (v =~ re) '
   top.pp = text("/" ++ re ++ "/");
   top.decls = [];  --ToDo - look for variables in the pattern
-  top.defs := [];   --ToDo - look for variables in the pattern
+  top.patternDefs := [];   --ToDo - look for variables in the pattern
+  top.defs := [];
   top.errors := []; -- type checking
 
   top.transform =
