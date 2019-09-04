@@ -8,25 +8,18 @@ import silver:langutil;
 import silver:langutil:pp;
 
 abstract production regexPattern
-p::Pattern ::= re::String
+top::Pattern ::= re::String
 {
-  p.pp = text("/" ++ re ++ "/");
-  --p.decls = [];  --ToDo - look for variables in the pattern
-  --p.defs = [];   --ToDo - look for variables in the pattern
-  --p.errors := []; -- type checking
+  -- ToDo - better pattern would be   ' v @ when (v =~ re) '
+  top.pp = text("/" ++ re ++ "/");
+  top.decls = [];  --ToDo - look for variables in the pattern
+  top.patternDefs := [];   --ToDo - look for variables in the pattern
+  top.defs := [];
+  top.errors := []; -- type checking
 
-  forwards to 
-    -- ToDo - better pattern would be   ' v @ when (v =~ re) '
- 
-    patternWhen(
-      regexMatch(
-        txtExpr( "( *_curr_scrutinee_ptr )", location=p.location ),
-        regexLiteralExpr(re, location=p.location),
-        location=p.location
-       ),
-      location=p.location
-     );
-
-
-
+  top.transform =
+    regexMatch(
+      top.transformIn,
+      regexLiteralExpr(re, location=top.location),
+      location=top.location);
 }
