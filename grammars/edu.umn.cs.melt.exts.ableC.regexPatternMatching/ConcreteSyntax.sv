@@ -1,7 +1,6 @@
 grammar edu:umn:cs:melt:exts:ableC:regexPatternMatching;
 
 import edu:umn:cs:melt:exts:ableC:regex;
-import silver:regex:concrete_syntax;
 import silver:langutil;
 import edu:umn:cs:melt:exts:ableC:algebraicDataTypes:patternmatching:concretesyntax as pcnc;
 
